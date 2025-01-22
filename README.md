@@ -33,4 +33,9 @@ e i seguenti metodi:
 * String toString(): mostra tutti i dati del professionista
 * getters, setters opportuni (con verifica validità parametri)
 
-4) Scrivere una classe Main in cui viene dichiarato un oggetto Impiegato e un oggetto Professionista, ne vengono visualizzati i dati e ne vengono chiamati i metodi
+**Versione 2:**
+- Aggiungere alla classe Persona due attributi: username e password (di tipo String)
+- Nella classe App dichiarare un ArrayList di persone, e popolarla con un elenco di oggetti di tipo Persona, Impiegato e Professionista
+- All'avvio del programma chiedere all'utente di inserire username e password, e verificare se all'interno della lista esiste una persona con quelle credenziali
+- Se la persona è stata trovata, mostrare il messaggio "Benvenuto <nome> <cognome>!" e, in base alla tipologia di persona, proporre l'elenco delle azioni possibili (ad esempio se la persona è un professionista può salutare e fatturare)
+- Se la persona non è stata trovata, mostrare il messaggio "username o password non validi"
