@@ -1,37 +1,38 @@
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeParseException;
-import java.util.Scanner;
+import org.generation.italy.jaita138.oop.model.Impiegato;
 import org.generation.italy.jaita138.oop.model.Persona;
+import org.generation.italy.jaita138.oop.model.Professionista;
 
 public class App {
     public static void main(String[] args) throws Exception {
         Persona p=new Persona("Mario", "Rossi", LocalDate.of(1980, 4, 12));
-        DateTimeFormatter df=DateTimeFormatter.ofPattern("dd/MM/yyyy");
+       
         p.saluta();
+        System.out.println();
         
+        Impiegato i=new Impiegato(
+            "Pino", "Gialli", 
+            LocalDate.of(1984, 3, 25), 
+            "XYZ123", 1600, 
+            LocalDate.of(2024, 8, 30));
+       
+        i.saluta();
+        i.riceviAumento(100);
+        System.out.println(i.toString());
+       
+        System.out.println();
 
-        Scanner sc=new Scanner(System.in);
-       
-       
-        Persona p1=null;
-        do {
-            System.out.print("Inserisci il nome: ");
-            String nome=sc.nextLine();   
-            System.out.print("Inserisci il cognome: ");
-            String cognome=sc.nextLine();   
-            System.out.print("Inserisci la data di nascita: ");
-                  
-            try {
-                LocalDate dn=LocalDate.parse(sc.nextLine(),df);  
-                p1=new Persona(nome, cognome, dn);            
-            } catch (DateTimeParseException e) {
-                System.out.println("Impossibile creare la persona: Data non valida");
-            } catch (Exception e) {
-                System.out.println("Impossibile creare la persona: "+e.getMessage());
-            }
-        }  while(p1==null);;
-        p1.saluta();
+        Professionista pr=new Professionista(
+            "Gino", "Marroni", 
+            LocalDate.of(1995, 6, 15), 
+            "12354654413", 
+            LocalDate.of(2025, 1, 22));
+
+        pr.saluta();
+        pr.fattura(1000);
+        pr.fattura(1600);
+        pr.fattura(2000);
+        System.out.println(pr.toString());
 
     }
 }
