@@ -40,6 +40,10 @@ public class Professionista extends Persona {
     }
 
     public void emettiFattura(LocalDate data, String cliente, double importo) {
+        if (!data.isBefore(dataInizioAttività))  {
+            throw new IllegalArgumentException("Non puoi emettere una fattura prima di aver iniziato l'attività");
+        }
+
         if (!fattureAnnue.containsKey(data.getYear())) {
             fattureAnnue.put(data.getYear(), new ArrayList<>());
         }
