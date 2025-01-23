@@ -9,9 +9,11 @@ public class Persona {
     private String username;
     private String password;
    
-    public Persona(String nome, String cognome, LocalDate dataNascita) {
+    public Persona(String nome, String cognome, LocalDate dataNascita, String username, String password) {
         setNome(nome);       
-        setCognome(cognome); 
+        setCognome(cognome);
+        setPassword(password);
+        setUsername(username);
         
         if (dataNascita.isBefore(LocalDate.now()))
             this.dataNascita = dataNascita;
@@ -43,6 +45,22 @@ public class Persona {
             this.cognome = cognome;
         else
             throw new IllegalArgumentException("Cognome non valido");  //se il nome è vuoto genero un'eccezione
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getUsername() {
+        return username;
     }
 
     public void saluta() {

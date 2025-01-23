@@ -8,8 +8,8 @@ public class Impiegato extends Persona {
     private LocalDate dataAssunzione;
     
     public Impiegato(String nome, String cognome, LocalDate dataNascita, String nrTesserino,
-            int stipendio, LocalDate dataAssunzione) {
-        super(nome, cognome, dataNascita);
+            int stipendio, LocalDate dataAssunzione, String username, String password) {
+        super(nome, cognome, dataNascita, username, password);
         setNrTesserino(nrTesserino);
         setStipendio(stipendio);
         if (dataAssunzione.isAfter(getDataNascita()) && 

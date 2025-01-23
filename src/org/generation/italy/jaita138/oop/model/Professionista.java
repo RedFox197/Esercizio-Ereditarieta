@@ -8,8 +8,8 @@ public class Professionista extends Persona {
     private LocalDate dataInizioAttività;
     
     public Professionista(String nome, String cognome, LocalDate dataNascita, String partitaIVA,
-            LocalDate dataInizioAttività) {
-        super(nome, cognome, dataNascita);
+            LocalDate dataInizioAttività, String username, String password) {
+        super(nome, cognome, dataNascita, username, password);
         if (partitaIVA.trim().length()==11)
             this.partitaIVA = partitaIVA;
         else
