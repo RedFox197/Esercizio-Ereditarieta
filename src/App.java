@@ -46,7 +46,14 @@ public class App {
             if (trovato instanceof Impiegato impiegato) {
                 impiegato.riceviAumento(20);
             } else if (trovato instanceof Professionista professionista) {
-                professionista.fattura(20);
+                professionista.emettiFattura(LocalDate.of(2000, 1, 1), "Pippo", 20);
+                professionista.emettiFattura(LocalDate.of(2000, 1, 1), "Pippo", 20);
+                professionista.emettiFattura(LocalDate.of(2002, 1, 1), "Pippo2", 20);
+                professionista.emettiFattura(LocalDate.of(2005, 1, 1), "Pippo3", 20);
+                professionista.emettiFattura(LocalDate.of(2005, 1, 1), "Pippo334", 20);
+
+                professionista.visualizzaFatture();
+                professionista.visualizzaFatture("Pippo");
             }
         } else {
             System.out.println("Username o Password non valida!");
