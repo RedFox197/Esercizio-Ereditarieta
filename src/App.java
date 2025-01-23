@@ -4,6 +4,7 @@ import org.generation.italy.jaita138.oop.model.Professionista;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -26,11 +27,33 @@ public class App {
         );
         list.add(
                 new Professionista(
-                        "Albero4", "Fiore4", LocalDate.of(1970, 2, 1), "Tesserino",
+                        "Albero4", "Fiore4", LocalDate.of(1970, 2, 1), "12345678901",
                         LocalDate.of(2020, 1, 2), "Boh", "1234"
                 )
         );
 
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Inserisci username:");
+        String username = scanner.nextLine();
 
+        System.out.println("Inserisci password");
+        String password = scanner.nextLine();
+
+        Persona trovato = login(username, password, list);
+        if (trovato != null) {
+            System.out.println("Login Effettuato");
+        } else {
+            System.out.println("Username o Password non valida!");
+        }
+        scanner.close();
+
+    }
+
+    public static Persona login(String username, String password, ArrayList<Persona> list) {
+        for (Persona persona : list) {
+            if (persona.getUsername().equals(username) && persona.getPassword().equals(password)) {
+                return persona;
+            }
+        }
     }
 }
