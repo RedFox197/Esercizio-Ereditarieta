@@ -42,6 +42,12 @@ public class App {
         Persona trovato = login(username, password, list);
         if (trovato != null) {
             System.out.println("Login Effettuato");
+            trovato.saluta();
+            if (trovato instanceof Impiegato impiegato) {
+                impiegato.riceviAumento(20);
+            } else if (trovato instanceof Professionista professionista) {
+                professionista.fattura(20);
+            }
         } else {
             System.out.println("Username o Password non valida!");
         }
@@ -55,5 +61,6 @@ public class App {
                 return persona;
             }
         }
+        return null;
     }
 }
