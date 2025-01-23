@@ -6,6 +6,8 @@ import java.time.format.DateTimeFormatter;
 public class Persona {
     private String nome,cognome;
     private LocalDate dataNascita;
+    private String username;
+    private String password;
    
     public Persona(String nome, String cognome, LocalDate dataNascita) {
         setNome(nome);       
