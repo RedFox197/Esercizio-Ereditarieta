@@ -45,6 +45,15 @@ public class App {
             trovato.saluta();
             if (trovato instanceof Impiegato impiegato) {
                 impiegato.riceviAumento(20);
+                impiegato.riceviCedolino(LocalDate.of(2000, 2, 3), 232);
+                impiegato.riceviCedolino(LocalDate.of(2000, 2, 3), 232);
+                impiegato.riceviCedolino(LocalDate.of(2001, 2, 3), 232);
+                impiegato.riceviCedolino(LocalDate.of(2002, 2, 3), 232);
+                impiegato.riceviCedolino(LocalDate.of(2003, 2, 3), 232);
+                impiegato.riceviCedolino(LocalDate.of(2003, 2, 3), 232);
+                impiegato.riceviCedolino(LocalDate.of(2003, 2, 3), 232);
+
+                impiegato.visualizzaCedolini(2003);
             } else if (trovato instanceof Professionista professionista) {
                 professionista.emettiFattura(LocalDate.of(2000, 1, 1), "Pippo", 20);
                 professionista.emettiFattura(LocalDate.of(2000, 1, 1), "Pippo", 20);
